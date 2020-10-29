@@ -30,7 +30,7 @@ class SettingDarabaseSeeeder extends Seeder
          'translatable' => [
              'store_name' => 'عامر',
              'outer_label' => 'توصيل خارجى',
-             'local_shipping_cost' => 'توصيل داخلى ',
+             'local_shipping_label' => 'توصيل داخلى ',
              'free_shipping_label' => 'توصيل مجانى',
          ],
          ]);

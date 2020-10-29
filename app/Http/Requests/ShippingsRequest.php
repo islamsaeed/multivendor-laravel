@@ -24,15 +24,19 @@ class ShippingsRequest extends FormRequest
     public function rules()
     {
         return [
-            'value' => '',
-            'plain_value'
+           'id' =>'required|exists:settings',
+            'value' => 'required',
+            'plain_value' => 'nullable|numeric'
         ];
     }
-
-    public function messages() {
-
+    public function messages()
+    {
         return [
 
-        ]
+            'id.required' => ' الايدى مختلف يا  علق',
+            'value.required' => 'يجيب ادخال اسم وسيله الشحن',
+            'plain_value.required' => 'يجب اادخال تكلفه عمليه الشحن  '
+        ];
+
     }
 }
