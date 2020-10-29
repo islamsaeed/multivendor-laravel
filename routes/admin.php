@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
@@ -15,16 +16,43 @@ use Illuminate\Support\Facades\Route;
 
 // note that  the prefix for all routes is  admin in RouteServiceProvidder
 
-Route::group(['namespace' => 'Dashboard' , 'middleware' =>'auth:admin'], function () {
-
-   Route::get('/','DashboardController@index')->name('admin.dashboard');// thr first page admin will visists if authenticated
-
-});
 
 
-Route::group(['namespace' => 'Dashboard','middleware' =>'guest:admin'], function () {
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    //      'prefix' => 'en',
+    ], function(){
 
-   Route::get('login', 'LoginController@login')->name('admin.login');
-   Route::post('login', 'LoginController@postlogin')->name('admin.post.login');
 
+      Route::group(['namespace' => 'Dashboard' , 'middleware' =>'auth:admin', 'prefix' =>'admin'], function () {
+
+        Route::get('/','DashboardController@index')->name('admin.dashboard');// thr first page admin will visists if authenticated
+        Route::group(['prefix' => 'settings'], function () {
+
+            Route::get('shipping-methods/{type}', 'SettingsController@editShippingsMethods')->name('edit.shippings.methods');
+
+            Route::put('shipping-methods/{id}', 'SettingsController@updateShippingsMethods')->name('update.shippings.methods');
+        });
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+      Route::group(['namespace' => 'Dashboard','middleware' =>'guest:admin', 'prefix' =>'admin'], function () {
+
+            Route::get('login', 'LoginController@login')->name('admin.login');
+            Route::post('login', 'LoginController@postlogin')->name('admin.post.login');
+
+     });
 });
