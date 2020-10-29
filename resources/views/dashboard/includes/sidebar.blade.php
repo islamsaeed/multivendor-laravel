@@ -22,7 +22,7 @@
                 </ul>
             </li>
 
-
+{{--
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">الاقسام الرئيسيه </span>
                     <span
@@ -66,9 +66,9 @@
                             متجر  </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
-
+{{--
             <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">الطلاب  </span>
                     <span
@@ -82,9 +82,9 @@
                             طالب </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
-
+{{--
             <li class="nav-item">
                 <a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">الاعدادات  </span>
@@ -96,7 +96,7 @@
                                           data-i18n="nav.dash.ecommerce"> تذاكر الطلاب </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
 
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
@@ -122,7 +122,7 @@
 
                 </ul>
             </li>
-            <li class=" navigation-header">
+            {{-- <li class=" navigation-header">
                 <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus"
                                                                         data-toggle="tooltip"
                                                                         data-placement="right"
@@ -1543,7 +1543,7 @@
                         class="la la-text-height"></i>
                     <span class="menu-title" data-i18n="nav.support_documentation.main">Documentation</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </div>
