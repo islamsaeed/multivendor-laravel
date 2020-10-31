@@ -39,9 +39,7 @@ class SettingsController extends Controller
 
             DB::beginTransaction();
 
-            $shipping_method->update([
-            'plain_value' => $request->plain_value
-            ]);
+            $shipping_method->update(['plain_value' => $request->plain_value]);
             $shipping_method->value = $request->value;
             $shipping_method->save();
               DB::commit();

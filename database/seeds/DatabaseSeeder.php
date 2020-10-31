@@ -1,7 +1,7 @@
 <?php
 
-use AdminDatabaseSeeder;
-use SettingDarabaseSeeeder;
+
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
